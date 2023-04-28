@@ -1,0 +1,26 @@
+﻿@using Stock_Trading_App.Services;
+@page "/crypto"
+@inject ITradingServices Trading
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<p role="status">Current  count: @TestData </p>
+
+
+
+@code {
+
+    private string? TestData;
+
+ protected override async Task OnInitializedAsync()  
+{
+
+
+   TestData = await Trading.TestMethod() ;
+
+}
+
+    
+}

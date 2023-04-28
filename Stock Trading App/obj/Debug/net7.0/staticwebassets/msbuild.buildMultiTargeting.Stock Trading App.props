@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Stock Trading App.props" />
+</Project>
