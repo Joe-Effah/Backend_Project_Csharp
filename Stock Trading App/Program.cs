@@ -6,7 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
-builder.Services.AddSingleton<ITradingServices,TradingService>();
+builder.Services.AddSingleton<ICurrencyServices,CurrencyService>();
+builder.Services.AddSingleton<IComodityService,CommodityService>();
 
 
 var app = builder.Build();
