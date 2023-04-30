@@ -1,0 +1,63 @@
+﻿
+@page "/Currency"
+
+<PageTitle> Currency Convertor </PageTitle>
+
+<h1>Crypto & FIAT </h1>
+
+<form action="#">
+   <label for="mar-sele">Select Market</label>
+   <select name="" id="mar-sele">
+      <option value="GHA">Ghana</option>
+      <option value="USD">USA</option>
+      <option value="CHA">China</option>
+      <option value="CAN">Canada</option>
+   </select>
+</form>
+ <div class="selec">
+   <button>Crypto Currency</button>
+   <button>Fiat  Currency</button>
+   </div>
+
+<form action="">  
+
+<div class="form">
+   <label for="">Currency To</label>
+   <input type="text" name="" > 
+   <label for="">Currency From </label>
+   <input type="text" name="" >
+</div>
+<button>Convert</button>
+</form>
+
+<div class="result">
+<p id="cur-form">23$ USD </p>
+<p id="cur-to">10 GHS </p>
+
+<div class="con-rate">
+   <p>Currenct Convertion Rate</p>
+     <p>GHA TO USD</p> 
+     <p>15000</p>
+
+     <p>Calculation 
+      23*10/3
+     </p>
+</div>
+
+</div>
+
+
+
+@code {
+
+    private string? TestData;
+
+ @* protected override async Task OnInitializedAsync()  
+{
+
+
+
+} *@
+
+    
+}

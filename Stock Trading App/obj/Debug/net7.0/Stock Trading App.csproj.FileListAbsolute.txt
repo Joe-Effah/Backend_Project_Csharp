@@ -1,0 +1,32 @@
+C:\Users\Alpha Grid\Desktop\C# Project\Stock Trading App\bin\Debug\net7.0\appsettings.Development.json
+C:\Users\Alpha Grid\Desktop\C# Project\Stock Trading App\bin\Debug\net7.0\appsettings.json
+C:\Users\Alpha Grid\Desktop\C# Project\Stock Trading App\bin\Debug\net7.0\Stock Trading App.staticwebassets.runtime.json
+C:\Users\Alpha Grid\Desktop\C# Project\Stock Trading App\bin\Debug\net7.0\Stock Trading App.exe
+C:\Users\Alpha Grid\Desktop\C# Project\Stock Trading App\bin\Debug\net7.0\Stock Trading App.deps.json
+C:\Users\Alpha Grid\Desktop\C# Project\Stock Trading App\bin\Debug\net7.0\Stock Trading App.runtimeconfig.json
+C:\Users\Alpha Grid\Desktop\C# Project\Stock Trading App\bin\Debug\net7.0\Stock Trading App.dll
+C:\Users\Alpha Grid\Desktop\C# Project\Stock Trading App\bin\Debug\net7.0\Stock Trading App.pdb
+C:\Users\Alpha Grid\Desktop\C# Project\Stock Trading App\obj\Debug\net7.0\Stock Trading App.csproj.AssemblyReference.cache
+C:\Users\Alpha Grid\Desktop\C# Project\Stock Trading App\obj\Debug\net7.0\Stock Trading App.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Alpha Grid\Desktop\C# Project\Stock Trading App\obj\Debug\net7.0\Stock Trading App.AssemblyInfoInputs.cache
+C:\Users\Alpha Grid\Desktop\C# Project\Stock Trading App\obj\Debug\net7.0\Stock Trading App.AssemblyInfo.cs
+C:\Users\Alpha Grid\Desktop\C# Project\Stock Trading App\obj\Debug\net7.0\Stock Trading App.csproj.CoreCompileInputs.cache
+C:\Users\Alpha Grid\Desktop\C# Project\Stock Trading App\obj\Debug\net7.0\Stock Trading App.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Alpha Grid\Desktop\C# Project\Stock Trading App\obj\Debug\net7.0\Stock Trading App.RazorAssemblyInfo.cache
+C:\Users\Alpha Grid\Desktop\C# Project\Stock Trading App\obj\Debug\net7.0\Stock Trading App.RazorAssemblyInfo.cs
+C:\Users\Alpha Grid\Desktop\C# Project\Stock Trading App\obj\Debug\net7.0\staticwebassets\msbuild.Stock Trading App.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Alpha Grid\Desktop\C# Project\Stock Trading App\obj\Debug\net7.0\staticwebassets\msbuild.build.Stock Trading App.props
+C:\Users\Alpha Grid\Desktop\C# Project\Stock Trading App\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.Stock Trading App.props
+C:\Users\Alpha Grid\Desktop\C# Project\Stock Trading App\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.Stock Trading App.props
+C:\Users\Alpha Grid\Desktop\C# Project\Stock Trading App\obj\Debug\net7.0\staticwebassets.pack.json
+C:\Users\Alpha Grid\Desktop\C# Project\Stock Trading App\obj\Debug\net7.0\staticwebassets.build.json
+C:\Users\Alpha Grid\Desktop\C# Project\Stock Trading App\obj\Debug\net7.0\staticwebassets.development.json
+C:\Users\Alpha Grid\Desktop\C# Project\Stock Trading App\obj\Debug\net7.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
+C:\Users\Alpha Grid\Desktop\C# Project\Stock Trading App\obj\Debug\net7.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
+C:\Users\Alpha Grid\Desktop\C# Project\Stock Trading App\obj\Debug\net7.0\scopedcss\bundle\Stock Trading App.styles.css
+C:\Users\Alpha Grid\Desktop\C# Project\Stock Trading App\obj\Debug\net7.0\scopedcss\projectbundle\Stock Trading App.bundle.scp.css
+C:\Users\Alpha Grid\Desktop\C# Project\Stock Trading App\obj\Debug\net7.0\Stock Trading App.dll
+C:\Users\Alpha Grid\Desktop\C# Project\Stock Trading App\obj\Debug\net7.0\refint\Stock Trading App.dll
+C:\Users\Alpha Grid\Desktop\C# Project\Stock Trading App\obj\Debug\net7.0\Stock Trading App.pdb
+C:\Users\Alpha Grid\Desktop\C# Project\Stock Trading App\obj\Debug\net7.0\Stock Trading App.genruntimeconfig.cache
+C:\Users\Alpha Grid\Desktop\C# Project\Stock Trading App\obj\Debug\net7.0\ref\Stock Trading App.dll
