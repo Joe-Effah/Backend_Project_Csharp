@@ -1,0 +1,149 @@
+ @page "/CryptoCurrency"
+ 
+ @inject ICurrencyServices _Currencys
+<PageTitle> Digital Currency Convertor </PageTitle>
+
+<h1>Digital Currency Convertor</h1>
+
+
+
+<div class="form">
+    <label for="currency-from">Currency From</label>
+    <select @bind="CurrrencyFromCode"  id="currency-form">
+     <option value="AC">AsiaCoin</option>
+     <option value="ADT">adToken</option>
+     <option value="BTC">Bitcoin</option>
+     <option value="DOGE">DogeCoin</option>
+     <option value="DOPE">DopeCoin</option>
+     <option value="ETH">Ethereum</option>
+     <option value="ETC">Ethereum-Classic</option>
+     <option value="HPB">High-Performance-Blockchain</option>
+     <option value="ULA">Ulatech</option>
+     <option value="UTK">UTrust</option>
+     <option value="LCC">Litecoin-Cash</option>
+    </select>
+    <label for="currency-to">Currency To </label>
+    <select @bind="CurrrencyToCode"  id="currency-to">
+     <option selected value="BTC">Bitcoin</option>
+     <option value="DOGE">DogeCoin</option>
+     <option value="DOPE">DopeCoin</option>
+     <option value="ETH">Ethereum</option>
+     <option value="ETC">Ethereum-Classic</option>
+     <option value="GLD">GoldCoin</option>
+     <option value="HPB">High-Performance-Blockchain</option>
+     <option value="ULA">Ulatech</option>
+     <option value="UTK">UTrust</option>
+     <option value="AC">AsiaCoin</option>
+     <option value="ADT">adToken</option>
+     <option value="LCC">Litecoin-Cash</option>
+     <option value="POT">PotCoin</option>
+     <option value="RHOC">RChain</option>
+    </select>
+  </div>
+
+   <label for="Cform">Currency From</label>
+   <input @bind="CurrrencyFrom" type="number" step="0.0045"  id="Cform">
+
+   
+   <label for="CTo">Currency To</label>
+   <input  @bind="CurrrencyTo"  readonly type="number" step="0.0045"  id="CTo">
+
+
+
+  <button @onclick=@(()=>GetExchangeRate(@CurrrencyFromCode,@CurrrencyToCode))  >Convert</button>
+
+
+
+<style>
+.result{
+
+padding: 1em;
+margin-top:2em;
+width:47%; 
+box-shadow:0px 1px 4px 1px black;
+border-radius: .4em;
+}
+
+</style>
+
+<div class="result">    
+<p>@ConnectionStatus</p>
+</div>
+
+
+@if (ConvertionSuccessState)
+{
+  <div class="result con-rate">
+  
+     <p>Exchange Rate  @ConversionData!.CurrentRate!.currencyToExchangeRate</p>
+     <p>Ask Bid  @ConversionData!.CurrentRate!.AskPrice</p>
+     <p>Bid Price @ConversionData!.CurrentRate!.BidPrice</p>
+     <p>Currency From @ConversionData!.CurrentRate.currencyFromName</p>
+     <p>Currency To  @ConversionData!.CurrentRate.currencyToName</p>
+     <p>Currency TimeStamp @ConversionData!.CurrentRate.timeCaptured</p>
+  </div>
+}else{
+     <div class="result con-rate">
+            <h2>Select a Digital Currency</h2>
+
+            <p>Lorem ipsum doloempore sequi fugiisi.</p>
+     </div>
+}
+
+  
+
+
+@code {
+
+
+   private Decimal ConvertionRate ; 
+   private bool ConvertionSuccessState = false; 
+   private Decimal CurrrencyTo; 
+
+    private string? CurrrencyToCode = "BTC"; 
+   private Decimal CurrrencyFrom; 
+    private string? CurrrencyFromCode = "ETH"; 
+
+    private ExchangeRate? ConversionData;
+
+
+   private string? ConnectionStatus; 
+
+     private void CalculateCurrency(Decimal CurrencyFromAmount)
+     {
+       
+        CurrrencyTo =  Math.Round(CurrencyFromAmount * ConvertionRate,6);
+      
+     }
+
+        
+
+     private async Task GetExchangeRate(string FromCurrencyCode,string ToCurrencyCode){
+        try{
+
+        ConnectionStatus  = "Loading ...";
+
+        var ResultConvertion = await _Currencys.ConvertCryptoCurrencyAsync(FromCurrencyCode,ToCurrencyCode);
+
+          ConversionData = ResultConvertion;
+
+          ConvertionSuccessState = true;
+
+          ConnectionStatus  = "Loading Complete";
+
+          ConvertionRate = Convert.ToDecimal(ResultConvertion!.CurrentRate!.currencyToExchangeRate);  
+
+          CalculateCurrency(CurrrencyFrom);
+
+
+      }catch (Exception e )
+      {
+        ConnectionStatus = "Error Retriving Current Convertion Rate";
+
+        System.Console.WriteLine(e.Message);
+         
+      }
+     
+     } 
+
+}
