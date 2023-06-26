@@ -1,11 +1,14 @@
 using Stock_Trading_App.Services;
 using Stock_Trading_App.Data;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
+builder.Services.AddHttpClient<ICurrencyServices,CurrencyService>();
+builder.Services.AddHttpClient<IComodityService,CommodityService>();
 builder.Services.AddSingleton<ICurrencyServices,CurrencyService>();
 builder.Services.AddSingleton<IComodityService,CommodityService>();
 

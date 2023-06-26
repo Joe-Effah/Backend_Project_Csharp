@@ -1,44 +1,119 @@
 ﻿@page "/Commodity"
-@using Stock_Trading_App.Data
+@inject IComodityService _ComodityService;
 
 
 <PageTitle>Market Commodity</PageTitle>
 
 <h1>Market Commodity</h1>
 
-<div class="commodity-card">
-   <h2>OIL</h2> 
-  <ul>
-    <li>comoditiyName</li>
-    <li>comoditiyInterval</li>
-    <li>comoditiyCost</li>
-    <li>comoditiyData</li>
-  </ul>
-</div>
+<div class="form">
+<select class="commodity-selector" @bind="ComoditySelectedName">
+  <option selected value="NATURAL_GAS"> Natural Gas </option>
+  <option value="WTI"> Crude Oil (WIT) </option>
+  <option value="BRENT"> Natural Gas (BRENT) </option>
+  <option value="COPPER"> Copper</option>
+  <option value="ALUMINUM">Aluminum</option>
+  <option value="WHEAT"> Wheat </option>
+  <option value="CORN"> Natural Gas </option>
+  <option value="COTTON"> Cotton </option>
+  <option value="SUGAR"> Sugar </option>
+  <option value="COFFEE">Coffee</option>
+</select>
 
-<div class="commodity-card">
-   <h2>Coffee</h2> 
-  <ul>
-    <li>comoditiyName</li>
-    <li>comoditiyInterval</li>
-    <li>comoditiyCost</li>
-    <li>comoditiyData</li>
-  </ul>
+<button @onclick=@(()=>OnGetComodityItem(@ComoditySelectedName))  >Get Month Global Price</button>
 </div>
 
 
-<div class="commodity-card">
-   <h2>Silver</h2> 
-  <ul>
-    <li>comoditiyName</li>
-    <li>comoditiyInterval</li>
-    <li>comoditiyCost</li>
-    <li>comoditiyData</li>
-  </ul>
+<style>
+.result{
+
+margin-top:2em;
+width:47%; 
+box-shadow:0px 1px 4px 1px black;
+border-radius: .4em;
+}
+.results{
+padding: 1em;
+margin-top:2em;
+width:47%; 
+box-shadow:0px 1px 4px 1px black;
+border-radius: .4em;
+}
+.comoditys{
+padding: 1em;
+margin-top:2em;
+width:70%; 
+box-shadow:0px 1px 4px 1px black;
+border-radius: .4em;
+}
+
+</style>
+
+<div class="results">
+  <p>@ConnectionStatus</p>
 </div>
+
+
+@if (RenderData)
+{
+  <div class="comoditys">
+
+  <h2>@Data!.comoditiyName</h2>
+  <p>@Data!.comoditiyInterval</p>
+  <p>@Data!.comoditiyUnit</p>
+
+  <h3>All Monthy Data</h3>
+
+  @foreach (var item in Data!.comoditiyData!)
+  {
+    <details  class="results">
+     <summary>@item["date"]</summary>
+      <p>@Data!.comoditiyUnit</p>
+      <p>@item["value"]</p>
+    </details> 
+  }
+
+</div> 
+}else{
+
+ <div class="result">
+  <h2>Select a Comodity</h2>
+  <p> Select a Commodity to Find its Price Details</p>
+  </div>
+
+}
+
+
 
 
 
 @code {
     
+   private string ComoditySelectedName = string.Empty;
+   private string ConnectionStatus = string.Empty;
+    private bool RenderData = false;
+   private ComoditiyModel? Data ;
+
+    private async Task OnGetComodityItem(string ComoditiyName){
+
+        try{
+          ConnectionStatus = "Loading ...";
+
+          var Result =  await _ComodityService.GetComodity(ComoditiyName);
+
+          Data = Result;
+
+      
+          ConnectionStatus = "Loading Successfully";
+
+
+          RenderData = true;
+        }
+        catch(Exception Ex)
+        {
+          ConnectionStatus = "Error Occured";
+            System.Console.WriteLine(Ex.Message);
+        }
+    }
+
 }

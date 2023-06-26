@@ -1,11 +1,11 @@
 
-
 namespace Stock_Trading_App.Data.Models;
 
 
 
 public class MarketData
 {
+   
 public string? market_type  {get;set;}	
 public string? Counrty	{get;set;}	
 public string? primary_exchanges	 {get;set;}	
@@ -20,5 +20,5 @@ public class MarketShareModel
 {
 public string? api_Message { get; set; }
 
-public List<List<MarketData>>?  listOfMarketData{get;set;}
+public IEnumerable<IEnumerable<MarketData>>?  listOfMarketData{get;set;}
 }
